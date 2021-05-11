@@ -1,1 +1,21 @@
-<p>listar-professor works!</p>
+<table class="table table-striped" >
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">editar</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of professores">
+        <th scope="row" >{{p.id}}</th>
+        <td>{{p.nome | uppercase }}</td>
+        <td>{{p.email }}</td>
+        <td> <button type="button" class="btn btn-warning" (click)="editar(p.id)">Editar</button></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>

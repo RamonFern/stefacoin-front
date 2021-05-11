@@ -3,4 +3,6 @@ export interface Usuario {
   senha?: string;
   nome?: string;
   tipo?: number;
+
 }
+

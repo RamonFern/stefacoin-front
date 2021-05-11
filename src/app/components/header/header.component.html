@@ -4,12 +4,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" *ngIf="usuario?.tipo === 1">
-          <a class="nav-link active" aria-current="page" href="#">Area do Professor</a>
+          <a class="nav-link active" aria-current="page" href="professores">Area do Professor</a>
         </li>
         <li class="nav-item" *ngIf="usuario?.tipo === 2">
-          <a class="nav-link" href="#">Area do Aluno</a>
+          <a class="nav-link" href="aluno">Area do Aluno</a>
         </li>
       </ul>
+      <a (click)='logout()' class="nav-link active" aria-current="page" href="">sair</a>
     </div>
   </div>
 </nav>

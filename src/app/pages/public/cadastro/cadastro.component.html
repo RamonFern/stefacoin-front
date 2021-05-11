@@ -1,1 +1,13 @@
-<p>cadastro works!</p>
+<div>
+    <label for="nome" class="form-label">Nome</label>
+    <input class="form-control" name="nome" [(ngModel)]="usuario.nome">
+    <label for="email" class="form-label">Email</label>
+    <input class="form-control" name="email" [(ngModel)]="usuario.email">
+    <label for="tipo" class="form-label">Tipo</label>
+    <input class="form-control" name="tipo" [(ngModel)]="usuario.tipo">
+
+    <label for="senha" class="form-label">Senha</label>
+    <input class="form-control" name="senha" [(ngModel)]="usuario.senha">
+
+    <button type="button" class="btn btn-success" (click)="adicionarProfessor()">{{textoBotao}}</button>
+</div>
