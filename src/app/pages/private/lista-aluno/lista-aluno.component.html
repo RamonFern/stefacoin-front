@@ -1,0 +1,32 @@
+<h1>lista de aluno</h1>
+<div><button type="button" class="btn btn-outline-primary" (click)="adicionar()">Adicionar</button></div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Formação</th>
+        <th scope="col">Curso</th>
+        <th scope="col">editar</th>
+        <th scope="col">excluir</th>
+}
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of alunos">
+        <th scope="row" >{{a.id}}</th>
+        <td>{{a.nome | uppercase }}</td>
+        <td>{{a.email }}</td>
+        <td>{{a.idade }}</td>
+        <td>{{a.formacao}}</td>
+        <td>{{a.cursos}}</td>
+        <td> <button type="button" class="btn btn-info" (click)="atualizar(a.id)">Editar</button></td>
+        <td> <button type="button" class="btn btn-outline-danger" (click)="excluir(a.id)">Excluir</button></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>

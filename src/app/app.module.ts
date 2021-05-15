@@ -16,6 +16,10 @@ import { ListarProfessorComponent } from './pages/private/professor/listar-profe
 import { CadastroComponent } from './pages/public/cadastro/cadastro.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { PaginaNaoEncontradaComponent } from './pages/public/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { ListaAlunoComponent } from './pages/private/lista-aluno/lista-aluno.component';
+import { CadAlunoComponent } from './pages/public/cad-aluno/cad-aluno.component';
+import { NovaContaComponent } from './pages/public/nova-conta/nova-conta.component';
+import { CadCursoComponent } from './page/private/cad-curso/cad-curso.component';
 
 export function tokenGetter() {
   return localStorage.getItem('jwttoken');
@@ -30,6 +34,10 @@ export function tokenGetter() {
     HomeComponent,
     PaginaNaoEncontradaComponent,
     HeaderComponent,
+    ListaAlunoComponent,
+    CadAlunoComponent,
+    NovaContaComponent,
+    CadCursoComponent,
   ],
   imports: [
     BrowserModule,

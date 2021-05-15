@@ -1,0 +1,21 @@
+<h1>cadastro de curso!</h1>
+
+<form  (ngSubmit)="adicionar()">
+    <div >
+        <label for="nome" class="form-label">Nome</label>
+        <input formControlName="nome" class="form-control" name="nome" [(ngModel)]="curso.nome">
+
+        <label for="descricao" class="form-label">Descricao</label>
+        <input formControlName="descricao" class="form-control" name="descricao" [(ngModel)]="curso.descricao">
+        
+        <label for="idProfessor" class="form-label">Professor id</label>
+        <input formControlName="idProfessor" class="form-control" name="idProfessor" [(ngModel)]="curso.idProfessor">
+         
+        
+    
+        <label  for="aulas" class="form-label">Aulas</label>
+        <input formControlName="aulas" class="form-control" name="aulas" [(ngModel)]="curso.aulas">
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+</form>
+

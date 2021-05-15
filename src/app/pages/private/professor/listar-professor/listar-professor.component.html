@@ -1,10 +1,14 @@
-<table class="table table-striped" >
+<h1>listar de professores</h1>
+
+<div><button type="button" class="btn btn-outline-primary" (click)="adicionar()">Adicionar</button></div>
+<table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">id</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
         <th scope="col">editar</th>
+        <th scope="col">excluir</th>
        
       </tr>
     </thead>
@@ -13,9 +17,12 @@
         <th scope="row" >{{p.id}}</th>
         <td>{{p.nome | uppercase }}</td>
         <td>{{p.email }}</td>
-        <td> <button type="button" class="btn btn-warning" (click)="editar(p.id)">Editar</button></td>
+        <td> <button type="button" class="btn btn-info" (click)="editar(p.id)">Editar</button></td>
+        <td> <button type="button" class="btn btn-outline-danger" (click)="excluir(p.id)">Excluir</button></td>
         
       </tr>
       
     </tbody>
   </table>
+
+  

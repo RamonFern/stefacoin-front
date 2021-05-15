@@ -20,7 +20,7 @@ export class ProfessorService {
   }
 
   obter(id: any): Observable<Professor> {
-    return this.httpClient.get<Professor>(URL, id)
+    return this.httpClient.get<Professor>(`http://localhost:3000/stefanini/professor/ ${id}`)
   }
 
   incluir(professor: Professor): Observable<Mensagem> {
@@ -31,5 +31,7 @@ export class ProfessorService {
     return this.httpClient.put<Mensagem>(URL, prof)
   }
 
-  excluir() {}
+  excluir(id: any): Observable<Mensagem> {
+    return this.httpClient.delete<Mensagem>(`http://localhost:3000/stefanini/professor/ ${id}`)
+  }
 }

@@ -3,7 +3,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProfessorService } from 'src/app/services/professor.service';
-import { Professor } from 'src/app/models/professor';
+
 
 
 @Component({
@@ -13,44 +13,46 @@ import { Professor } from 'src/app/models/professor';
 })
 export class CadastroComponent implements OnInit {
 
+  usuario: Usuario
   cadastroForm: FormGroup = new FormGroup({
     nome: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
     senha: new FormControl('', Validators.required),
-    tipo: new FormControl(0, Validators.required),
+    tipo: new FormControl('', Validators.required),
   });
 
-  usuario: Usuario = {
-    nome: this.cadastroForm.get('nome')?.value,
-    email: this.cadastroForm.get('email')?.value,
-    senha: this.cadastroForm.get('senha')?.value,
-    tipo: this.cadastroForm.get('tipo')?.value
-  }
-
   id: any
-  usuarioAtualizar: Usuario
   textoBotao: string = 'Salvar'
   constructor(private profService: ProfessorService, private activatedRoute: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.usuario = {
+      nome: this.cadastroForm.get('nome')?.value,
+      email: this.cadastroForm.get('email')?.value,
+      senha: this.cadastroForm.get('senha')?.value,
+      tipo: this.cadastroForm.get('tipo')?.value
+    }
 
     this.activatedRoute.params.subscribe(parametros => {
       if(parametros['id']){
         this.textoBotao = 'Editar'
         this.id = parametros['id']
         this.profService.obter(this.id).subscribe(prof => {
-          this.usuarioAtualizar = prof
+          //console.log("cheguei aqui" + prof[this.id].nome)  
+          this.usuario = prof[this.id]
+          console.log()
         })
         console.log(`Id enviado: ${this.id}`)
       }
     })    
   }
 
-  adicionarProfessor = () => {
+  adicionar = () => {
+
     if(this.textoBotao == 'Salvar'){
     this.profService.incluir(this.usuario).subscribe(
-      success => this.navegar('home'),
+      success => this.navegar('login'),
       error => console.log("Não foi possivel Salvar. ERRO!" + this.usuario.nome),
       () => console.log('Requisição completa'))
     }else{

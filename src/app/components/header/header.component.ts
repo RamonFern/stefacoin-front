@@ -11,21 +11,25 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   usuario: Usuario;
-
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
       this.usuario = this.authService.getUsuario();
+      this.usuario.tipo = 1
     });
   }
 
   showHeader() {
+
     return this.authService.isAuthenticated();
   }
 
   logout() {
     this.authService.logout();
+  }
+  irCursos() {
+    this.router.navigate(['curso'])
   }
 
 }

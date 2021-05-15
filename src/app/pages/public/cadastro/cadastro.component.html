@@ -1,13 +1,28 @@
-<div>
+<h1>Cadastro de Professor</h1>
+<form [formGroup]="cadastroForm" (ngSubmit)="adicionar()">
+<div >
     <label for="nome" class="form-label">Nome</label>
-    <input class="form-control" name="nome" [(ngModel)]="usuario.nome">
+    <input formControlName="nome" class="form-control" name="nome" [(ngModel)]="usuario.nome">
     <label for="email" class="form-label">Email</label>
-    <input class="form-control" name="email" [(ngModel)]="usuario.email">
+    <input formControlName="email" class="form-control" name="email" [(ngModel)]="usuario.email">
+    
     <label for="tipo" class="form-label">Tipo</label>
-    <input class="form-control" name="tipo" [(ngModel)]="usuario.tipo">
+    <input formControlName="tipo" class="form-control" name="tipo" [(ngModel)]="usuario.tipo">
+     
+    
 
-    <label for="senha" class="form-label">Senha</label>
-    <input class="form-control" name="senha" [(ngModel)]="usuario.senha">
-
-    <button type="button" class="btn btn-success" (click)="adicionarProfessor()">{{textoBotao}}</button>
+    <label  for="senha" class="form-label">Senha</label>
+    <input formControlName="senha" class="form-control" name="senha" [(ngModel)]="usuario.senha">
+    <button type="submit" class="btn btn-success">{{textoBotao}}</button>
 </div>
+
+</form>
+
+
+
+
+<!--
+<form [(ngModel)]="usuario.tipo">
+    <input type="RADIO" name="tipo" value="1"> Professor
+    <input type="RADIO" name="tipo" value="2"> Aluno
+</form> -->

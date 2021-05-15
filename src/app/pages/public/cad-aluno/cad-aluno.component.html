@@ -1,0 +1,24 @@
+<h1>Cadastro de alunos</h1>
+
+<form [formGroup]="cadastroForm" (ngSubmit)="adicionar()">
+    <div >
+        <label for="nome" class="form-label">Nome</label>
+        <input formControlName="nome" class="form-control" name="nome" [(ngModel)]="aluno.nome">
+        <label for="email" class="form-label">Email</label>
+        <input formControlName="email" class="form-control" name="email" [(ngModel)]="aluno.email">
+        
+        <label for="tipo" class="form-label">Tipo</label>
+        <input formControlName="tipo" class="form-control" name="tipo" [(ngModel)]="aluno.tipo">
+
+        <label for="idade" class="form-label">Idade</label>
+        <input formControlName="tipo" class="form-control" name="idade" [(ngModel)]="aluno.idade">
+        <label for="formacao" class="form-label">Formacao</label>
+        <input formControlName="formacao" class="form-control" name="formacao" [(ngModel)]="aluno.formacao">
+    
+        <label  for="senha" class="form-label">Senha</label>
+        <input formControlName="senha" class="form-control" name="senha" [(ngModel)]="aluno.senha">
+        <button type="submit" class="btn btn-success">{{textoBotao}}</button>
+    </div>
+    
+    </form>
+    
